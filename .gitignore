@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/.vs/Upstart13
+/src/Upstart13.Api/obj
+/src/Upstart13.Application/obj
