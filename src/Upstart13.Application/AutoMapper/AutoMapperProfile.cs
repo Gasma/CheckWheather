@@ -10,6 +10,7 @@ namespace Upstart13.Application.AutoMapper
         {
             CreateMap<ApiWheatherForecastResultModel, WeatherForecastResponseViewModel>()
                 .ForMember(a => a.Periods, opt => opt.MapFrom(src => src.Properties.Periods));
+            CreateMap<Infrastructure.ExternalCommunication.CommunicationModels.PeriodModel, ViewModels.PeriodModel>();
         }
     }
 }

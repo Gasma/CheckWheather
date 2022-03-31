@@ -38,13 +38,13 @@ namespace Upstart13.Application.Queries.Handlers
             if (convertedAddress == null || 
                 convertedAddress.Result == null || 
                 convertedAddress.Result.AddressMatches == null ||
-                convertedAddress.Result.AddressMatches.Coordinates == null)
+                convertedAddress.Result.AddressMatches.Count() < 0)
             {
                 notification.AddNotification("AddressError", "Address not found!");
                 return null;
             }
 
-            var weatherInfo = await weatherService.QueryWeather(convertedAddress.Result.AddressMatches.Coordinates.X, convertedAddress.Result.AddressMatches.Coordinates.Y);
+            var weatherInfo = await weatherService.QueryWeather(convertedAddress.Result.AddressMatches.FirstOrDefault().Coordinates.Y, convertedAddress.Result.AddressMatches.FirstOrDefault().Coordinates.X);
 
             if (weatherInfo == null ||
                 weatherInfo.Properties == null ||
