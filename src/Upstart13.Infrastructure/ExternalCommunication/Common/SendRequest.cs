@@ -8,6 +8,7 @@ namespace Upstart13.Infrastructure.ExternalCommunication.Common
         public async Task<T> GetAsync<T>(string url)
         {
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("User-Agent", "(github.com/gasma, gabriel.moreira.alvarenga@gmail.com)");
             var result = await httpClient.GetAsync(url);
             var content = await result.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<T>(content);

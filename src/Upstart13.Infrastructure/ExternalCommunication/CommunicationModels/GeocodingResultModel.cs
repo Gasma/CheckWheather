@@ -7,7 +7,7 @@
     public class ResultModel
     {
         public InputModel Input { get; set; }
-        public AddressMatchesModel AddressMatches { get; set; }
+        public IEnumerable<AddressMatchesModel> AddressMatches { get; set; }
     }
     public class InputModel
     {
