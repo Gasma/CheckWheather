@@ -19,7 +19,7 @@ namespace Upstart13.Infrastructure.ExternalCommunication.CommunicationService
 
         public async Task<GeocodingResultModel> QueryGeocodding(string query)
         {
-            return await sendRequest.GetAsync<GeocodingResultModel>($"{GeocodingUrl}{query}");
+            return await sendRequest.GetAsync<GeocodingResultModel>(string.Format(GeocodingUrl, query));
         }
 
         public async Task<ApiWheatherForecastResultModel> QueryWeatherForecast(string query)
@@ -27,9 +27,9 @@ namespace Upstart13.Infrastructure.ExternalCommunication.CommunicationService
             return await sendRequest.GetAsync<ApiWheatherForecastResultModel>(query);
         }
 
-        public async Task<ApiWheatherResultModel> QueryWeather(string query)
+        public async Task<ApiWheatherResultModel> QueryWeather(string latitude, string longitude)
         {
-            return await sendRequest.GetAsync<ApiWheatherResultModel>($"{ApiWheatherUrl}{query}");
+            return await sendRequest.GetAsync<ApiWheatherResultModel>(string.Format(ApiWheatherUrl, latitude, longitude));
         }
     }
 }
