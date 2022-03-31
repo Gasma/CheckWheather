@@ -14,8 +14,8 @@ namespace Upstart13.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] string street, [FromQuery] string city, [FromQuery] string state, [FromQuery] string zip)
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        public async Task<IActionResult> Get([FromQuery] string street, [FromQuery] string city, [FromQuery] string? state, [FromQuery] string? zip)
         {
             return Ok(await Mediator.Send(new WeatherForecastQuery
             {

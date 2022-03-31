@@ -5,3 +5,7 @@
 /src/.vs/Upstart13
 /src/Upstart13.Api/obj
 /src/Upstart13.Application/obj
+/src/Upstart13.Infrastructure/obj
+/src/Upstart13.Api/bin/Debug/net6.0
+/src/Upstart13.Application/bin/Debug/net6.0
+/src/Upstart13.Infrastructure/bin/Debug/net6.0
